@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='openlayers4gwt'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User'/>
+
+  <inherits name='com.google.gwt.user.theme.clean.Clean'/>
+  <inherits name='com.google.gwt.jsio.JSIO'/>
+  <entry-point class='br.com.mr.client.OpenLayers4Gwt'/>
+
+  <source path='client'/>
+  <source path='shared'/>
+
+</module>
