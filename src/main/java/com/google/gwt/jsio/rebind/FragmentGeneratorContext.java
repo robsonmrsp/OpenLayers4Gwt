@@ -75,6 +75,9 @@ class FragmentGeneratorContext {
    */
   boolean readOnly;
 
+  //TODO Verificar
+  public boolean initProperties;
+
   /**
    * The type of the value being accessed.
    */
@@ -99,6 +102,7 @@ class FragmentGeneratorContext {
    * The type system in use.
    */
   TypeOracle typeOracle;
+
 
   /**
    * Constructor.

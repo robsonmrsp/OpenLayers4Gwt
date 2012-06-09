@@ -102,7 +102,7 @@ public interface MapImpl extends JSFlyweightWrapper {
 
 	public void zoomToExtent(JavaScriptObject jso, JavaScriptObject bounds, Boolean closest);
 
-	public void zoomToMaxExtent(JavaScriptObject jso, JavaScriptObject options);
+	public void zoomToMaxExtent(JavaScriptObject jso);
 
 	public void zoomToScale(JavaScriptObject jso, Double scale, Boolean closest);
 
@@ -118,8 +118,7 @@ public interface MapImpl extends JSFlyweightWrapper {
 
 	public JavaScriptObject getLayerPxFromLonLat(JavaScriptObject jso, JavaScriptObject lonLat);
 
-//	@BeanProperties	
-//	void setResolutions(JavaScriptObject jso, JavaScriptObject resolutions);
-//	@BeanProperties	
-//	JavaScriptObject getResolutions(JavaScriptObject jso);
+	public JavaScriptObject getMaxExtent(JavaScriptObject jso);
+
+	void setMaxExtent(JavaScriptObject jso, JavaScriptObject jso2);
 }

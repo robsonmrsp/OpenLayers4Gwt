@@ -18,6 +18,7 @@ public class WMSOptions extends GridOptions implements HasWMSOptions {
 
 	@Override
 	public Double getOpacity() {
+		
 		return WMSOptionsImpl.impl.getOpacity(getJso());
 	}
 

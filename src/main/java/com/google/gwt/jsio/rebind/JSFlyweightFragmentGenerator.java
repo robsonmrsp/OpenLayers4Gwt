@@ -28,36 +28,33 @@ import com.google.gwt.jsio.client.JSFlyweightWrapper;
  */
 class JSFlyweightFragmentGenerator extends FragmentGenerator {
 
-  @Override
-  boolean accepts(TypeOracle oracle, JType type) {
-    JClassType asClass = type.isClassOrInterface();
-    if (asClass == null) {
-      return false;
-    }
+	@Override
+	boolean accepts(TypeOracle oracle, JType type) {
+		JClassType asClass = type.isClassOrInterface();
+		if (asClass == null) {
+			return false;
+		}
 
-    return isAssignable(oracle, asClass, JSFlyweightWrapper.class);
-  }
+		return isAssignable(oracle, asClass, JSFlyweightWrapper.class);
+	}
 
-  @Override
-  void fromJS(FragmentGeneratorContext context)
-      throws UnableToCompleteException {
-    logError(context.parentLogger);
-  }
+	@Override
+	void fromJS(FragmentGeneratorContext context) throws UnableToCompleteException {
+		logError(context.parentLogger);
+	}
 
-  @Override
-  void toJS(FragmentGeneratorContext context) throws UnableToCompleteException {
-    logError(context.parentLogger);
-  }
+	@Override
+	void toJS(FragmentGeneratorContext context) throws UnableToCompleteException {
+		logError(context.parentLogger);
+	}
 
-  @Override
-  void writeExtractorJSNIReference(FragmentGeneratorContext context)
-      throws UnableToCompleteException {
-    logError(context.parentLogger);
-  }
+	@Override
+	void writeExtractorJSNIReference(FragmentGeneratorContext context) throws UnableToCompleteException {
+		logError(context.parentLogger);
+	}
 
-  private void logError(TreeLogger logger) throws UnableToCompleteException {
-    logger.branch(TreeLogger.ERROR, "JSFlyweightWrappers cannot be imported "
-        + " or exported. Use JSWrapper instead", null);
-    throw new UnableToCompleteException();
-  }
+	private void logError(TreeLogger logger) throws UnableToCompleteException {
+		logger.branch(TreeLogger.ERROR, "JSFlyweightWrappers cannot be imported " + " or exported. Use JSWrapper instead", null);
+		throw new UnableToCompleteException();
+	}
 }

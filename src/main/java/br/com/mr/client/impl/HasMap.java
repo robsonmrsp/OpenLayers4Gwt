@@ -1,5 +1,6 @@
 package br.com.mr.client.impl;
 
+import br.com.mr.client.basetypes.Bounds;
 import br.com.mr.client.basetypes.impl.HasBounds;
 import br.com.mr.client.basetypes.impl.HasJso;
 import br.com.mr.client.basetypes.impl.HasLonLat;
@@ -98,7 +99,7 @@ public interface HasMap extends HasJso {
 
 	public void zoomToExtent(HasBounds bounds, Boolean closest);
 
-	public void zoomToMaxExtent(HasOptions options);
+	public void zoomToMaxExtent();
 
 	public void zoomToScale(Double scale, Boolean closest);
 
@@ -113,7 +114,11 @@ public interface HasMap extends HasJso {
 	public HasJso getLayerPxFromViewPortPx(HasPixel pixel);
 
 	public HasJso getLayerPxFromLonLat(HasLonLat lonLat);
+
+	public void setMaxExtent(HasBounds bounds);
 	
+	public Bounds getMaxExtent();
+
 //	void setResolutions(Double[] resolutions);
 //	Double[] getResolutions();
 }

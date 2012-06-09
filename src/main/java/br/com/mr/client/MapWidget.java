@@ -1,7 +1,10 @@
 package br.com.mr.client;
 
+import com.google.gwt.event.logical.shared.ResizeEvent;
+import com.google.gwt.event.logical.shared.ResizeHandler;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Element;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 
 public class MapWidget extends Widget {
@@ -11,8 +14,19 @@ public class MapWidget extends Widget {
 
 	public MapWidget() {
 		Element e = DOM.createDiv();
+		e.setAttribute("id", "map_impl");
 		setElement(e);
-		map = new Map(e);
+//		map = new Map(e);
+		setWidth(Window.getClientWidth() +"px");
+		setHeight(Window.getClientHeight() +"px");
+		Window.addResizeHandler(new ResizeHandler() {
+			@Override
+			public void onResize(ResizeEvent event) {
+				setWidth(Window.getClientWidth() +"px");
+				setHeight(Window.getClientHeight()  +"px");
+			}
+		});
+	
 	}
 
 //	public MapWidget(HasMapOptions options) {
@@ -20,6 +34,23 @@ public class MapWidget extends Widget {
 //		map = new Map(getElement(), options);
 //	}
 
+	public MapWidget(MapOptions options) {
+		Element e = DOM.createDiv();
+		e.setAttribute("id", "map_impl");
+		this.options = options;
+		setElement(e);
+		
+		Window.addResizeHandler(new ResizeHandler() {
+			@Override
+			public void onResize(ResizeEvent event) {
+				setWidth(Window.getClientWidth() +"px");
+				setHeight(Window.getClientHeight()  +"px");
+			}
+		});
+		
+		setWidth(Window.getClientWidth() +"px");
+		setHeight(Window.getClientHeight() +"px");
+	}
 	public MapWidget(String width, String height, MapOptions options) {
 		Element e = DOM.createDiv();
 		this.options = options;
@@ -37,5 +68,4 @@ public class MapWidget extends Widget {
 		}
 		return map;
 	}
-
 }

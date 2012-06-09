@@ -30,7 +30,9 @@ public class Map implements HasMap {
 
 	public Map(Element mapDiv) {
 		this(MapImpl.impl.construct(mapDiv));
+		
 	}
+//	initialize()
 
 	public Map(Element mapDiv, HasMapOptions options) {
 		this(MapImpl.impl.construct(mapDiv, options.getJso()));
@@ -191,7 +193,6 @@ public class Map implements HasMap {
 
 	@Override
 	public HasBounds getMaxExtent(HasOptions options) {
-
 		return new Bounds(MapImpl.impl.getMaxExtent(jso, options.getJso()));
 	}
 
@@ -257,8 +258,8 @@ public class Map implements HasMap {
 	}
 
 	@Override
-	public void zoomToMaxExtent(HasOptions options) {
-		MapImpl.impl.zoomToMaxExtent(jso, options.getJso());
+	public void zoomToMaxExtent() {
+		MapImpl.impl.zoomToMaxExtent(jso);
 	}
 
 	@Override
@@ -295,6 +296,17 @@ public class Map implements HasMap {
 	public HasPixel getLayerPxFromLonLat(HasLonLat lonLat) {
 		return new Pixel(MapImpl.impl.getLayerPxFromLonLat(jso, lonLat.getJso()));
 	}
+	
+
+	public void setMaxExtent(HasBounds bounds){
+		MapImpl.impl.setMaxExtent(jso, bounds.getJso());
+	}
+	
+	public Bounds getMaxExtent(){
+		return new Bounds(MapImpl.impl.getMaxExtent(jso));
+	}
+
+
 
 //	@Override
 //	public void setResolutions(Double[] resolutions) {

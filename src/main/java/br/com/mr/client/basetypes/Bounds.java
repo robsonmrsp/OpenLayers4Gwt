@@ -16,6 +16,10 @@ public class Bounds implements HasBounds {
 		this.jso = jso;
 	}
 
+	public Bounds() {
+		this(BoundsImpl.impl.construct());
+	}
+
 	@Override
 	public JavaScriptObject getJso() {
 		return jso;

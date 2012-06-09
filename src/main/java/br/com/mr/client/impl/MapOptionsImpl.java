@@ -5,13 +5,15 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.jsio.client.BeanProperties;
 import com.google.gwt.jsio.client.Constructor;
 import com.google.gwt.jsio.client.JSFlyweightWrapper;
+import com.google.gwt.jsio.client.NoInitProperties;
 
 @BeanProperties
+@NoInitProperties
 public interface MapOptionsImpl extends JSFlyweightWrapper {
 
 	MapOptionsImpl impl = GWT.create( MapOptionsImpl.class);
 
-	@Constructor( "Object")
+	@Constructor("Object")
 	JavaScriptObject construct();
 	
 	Double getMaxResolution(JavaScriptObject jso );

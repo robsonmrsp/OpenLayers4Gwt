@@ -10,7 +10,6 @@ import br.com.mr.client.impl.HasProjection;
 import br.com.mr.client.impl.MapOptionsImpl;
 
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.core.client.JsArrayNumber;
 
 public class MapOptions implements HasMapOptions {
 

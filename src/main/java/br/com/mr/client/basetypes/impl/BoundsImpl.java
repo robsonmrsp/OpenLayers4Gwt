@@ -12,4 +12,7 @@ public interface BoundsImpl extends JSFlyweightWrapper{
 	
 	@Constructor("$wnd.OpenLayers.Bounds")
 	JavaScriptObject construct(Double left, Double bottom, Double right, Double top);
+
+	@Constructor("$wnd.OpenLayers.Bounds")
+	JavaScriptObject construct();
 }
