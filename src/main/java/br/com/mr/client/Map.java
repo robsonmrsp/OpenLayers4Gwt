@@ -32,7 +32,6 @@ public class Map implements HasMap {
 		this(MapImpl.impl.construct(mapDiv));
 		
 	}
-//	initialize()
 
 	public Map(Element mapDiv, HasMapOptions options) {
 		this(MapImpl.impl.construct(mapDiv, options.getJso()));
@@ -306,25 +305,7 @@ public class Map implements HasMap {
 		return new Bounds(MapImpl.impl.getMaxExtent(jso));
 	}
 
-
-
-//	@Override
-//	public void setResolutions(Double[] resolutions) {
-//		JsArrayNumber resos  = (JsArrayNumber) JavaScriptObject.createArray();
-//		for (int i = 0; i < resolutions.length; i++)		{
-//			resos.push(resolutions[i]);;
-//		}
-//		
-//		MapImpl.impl.setResolutions(jso, resos);	
-//	}
-
-//	@Override
-//	public Double[] getResolutions() {
-//		JsArrayNumber jsa = (JsArrayNumber) MapImpl.impl.getResolutions(jso);
-//		Double[] rets = new Double[jsa.length()];
-//		for (int i = 0; i < jsa.length(); i++) {
-//			rets[i] = jsa.get(i);
-//		}
-//		return rets;
-//	}
+	public void addControl(HasControl control) {
+		MapImpl.impl.addControl(jso, control.getJso(), null);
+	}
 }

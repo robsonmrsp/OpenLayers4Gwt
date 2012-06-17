@@ -124,19 +124,20 @@ public class LayerOptions implements HasLayerOptions {
 		LayerOptionsImpl.impl.setTransitionEffect(jso, transition);
 	}
 
-//	@Override
-//	public void setResolutions(Double[] resolutions) {
-//		// LayerOptionsImpl.impl.setResolutions(jso, resolutions);
-//	}
+	// @Override
+	// public void setResolutions(Double[] resolutions) {
+	// // LayerOptionsImpl.impl.setResolutions(jso, resolutions);
+	// }
 
 	@Override
 	public void setResolutions(Double[] resolutions) {
-		JsArrayNumber resos  = (JsArrayNumber) JavaScriptObject.createArray();
-		for (int i = 0; i < resolutions.length; i++)		{
-			resos.push(resolutions[i]);;
+		JsArrayNumber resos = (JsArrayNumber) JavaScriptObject.createArray();
+		for (int i = 0; i < resolutions.length; i++) {
+			resos.push(resolutions[i]);
+			;
 		}
-		
-		LayerOptionsImpl.impl.setResolutions(jso, resos);	
+
+		LayerOptionsImpl.impl.setResolutions(jso, resos);
 	}
 
 	@Override

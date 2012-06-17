@@ -8,6 +8,10 @@ import br.com.mr.client.layer.impl.HasGridOptions;
 
 public class GridOptions extends HTTPRequestOptions implements HasGridOptions {
 
+	public GridOptions() {
+		super(GridOptionsImpl.impl.construct());
+	}
+	
 	@Override
 	public void setTileSize(Size size) {
 		GridOptionsImpl.impl.setTileSize(getJso(), size.getJso());

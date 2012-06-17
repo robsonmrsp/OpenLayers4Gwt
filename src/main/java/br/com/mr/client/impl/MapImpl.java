@@ -45,7 +45,7 @@ public interface MapImpl extends JSFlyweightWrapper {
 	public void setBaseLayer(JavaScriptObject jso, JavaScriptObject newBaseLayer);
 
 	public void addControl(JavaScriptObject jso, JavaScriptObject control, JavaScriptObject pxels);
-
+	
 	public JavaScriptObject getControl(JavaScriptObject jso, String id);
 
 	public void removeControl(JavaScriptObject jso, JavaScriptObject control);
@@ -121,4 +121,6 @@ public interface MapImpl extends JSFlyweightWrapper {
 	public JavaScriptObject getMaxExtent(JavaScriptObject jso);
 
 	void setMaxExtent(JavaScriptObject jso, JavaScriptObject jso2);
+
+
 }
