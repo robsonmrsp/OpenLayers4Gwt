@@ -13,6 +13,9 @@ public interface LayerImpl extends JSFlyweightWrapper {
 	@Constructor("$wnd.OpenLayers.Layer")
 	JavaScriptObject construct(String name, JavaScriptObject mapOptions);
 
+	@Constructor("$wnd.OpenLayers.Layer")
+	JavaScriptObject construct(String name);
+
 	JavaScriptObject getEvents(JavaScriptObject jso);
 
 	void setEvents(JavaScriptObject jso, JavaScriptObject events);
@@ -136,4 +139,5 @@ public interface LayerImpl extends JSFlyweightWrapper {
 
 	@BeanProperties
 	JavaScriptObject getTileSize(JavaScriptObject jso);
+
 }

@@ -31,6 +31,9 @@ public class Layer implements HasLayer {
 		this(LayerImpl.impl.construct(name, options.getJso()));
 	}
 
+	public Layer(String name) {
+		this(LayerImpl.impl.construct(name));		
+	}
 	public Layer(JavaScriptObject jso) {
 		this.jso = jso;
 	}
